@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import Project from "./Components/Project.js";
 import './App.css';
+import {useEffect, useState} from "react"
 
 function App() {
+  const [projects, setProjects] = useState(null)
+
+  useEffect(()=>{
+    fetch(" http://localhost:3000/projects")
+    .then((r)=>r.ok ? r.json().then(setProjects) : console.log("Fetch Failed, check if server is running..."))
+  },[])
+
+  console.log(projects || projects.map(project=>{console.log(project.id)}))
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>projects</h1>
+      {/* {projects || projects.map(project=>{<Project project={project} key={project.id}/>})} */}
     </div>
   );
 }
