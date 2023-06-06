@@ -1,20 +1,21 @@
 import Project from "./Components/Project.js";
 import './App.css';
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 
 function App() {
-  const [projects, setProjects] = useState(null)
+  const [projects, setProjects] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch(" http://localhost:3000/projects")
-    .then((r)=>r.ok ? r.json().then(setProjects) : console.log("Fetch Failed, check if server is running..."))
-  },[])
+      .then((r) => r.ok ? r.json().then(setProjects) : console.log("Fetch Failed, check if server is running..."))
+  }, [])
 
-  console.log(projects || projects.map(project=>{console.log(project.id)}))
+  const projectElements = projects.map((project) =>{return <Project key={project.id} project={project}/>})
+
   return (
     <div className="App">
       <h1>projects</h1>
-      {/* {projects || projects.map(project=>{<Project project={project} key={project.id}/>})} */}
+      {projectElements}
     </div>
   );
 }

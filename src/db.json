@@ -1,22 +1,25 @@
 {
-    "projects": {
-        "KeepSight":{
+    "projects": [
+        {
             "id": 1,
             "name": "KeepSight",
             "description": "",
-            "languages": []
+            "languages": ["Ruby on Rails", "React", "PostgreSQL"],
+            "github": "gh"
         },
-        "le musik": {
+        {
             "id": 2,
             "name": "Le Musik",
             "description": "",
-            "languages": []
+            "languages": ["Ruby on Rails", "React", "PostgreSQL"],
+            "github": ""
         },
-        "gamers guide": {
+        {
             "id": 3,
             "name": "Gamers Guide",
             "description": "",
-            "languages": []
+            "languages": ["Ruby", "React"],
+            "github": ""
         }
-    }
+    ]
 }
