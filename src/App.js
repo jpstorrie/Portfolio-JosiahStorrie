@@ -14,13 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="h-11 navbg">
+      <nav className="h-11 w-1/2 rounded-br-lg navbg">
         <ol className="flex p-2 justify-around">
           <li><a href="#">About Me</a></li>
           <li><a href="#">Technical Projects</a></li>
           <li><a href="#">Resume</a></li>
         </ol>
       </nav>
+
       <h1>projects</h1>
       {projectElements}
     </div>
