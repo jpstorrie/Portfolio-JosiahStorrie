@@ -23,8 +23,10 @@ function App() {
         </ol>
       </nav>
       <About />
-      <h1>projects</h1>
+      <h1 className="flex justify-center py-5 text-2xl font-['Comic_Sans_MS']">PROJECTS</h1>
+      <div className="flex justify-between px-12">
       {projectElements}
+      </div>
     </div>
   );
 }
